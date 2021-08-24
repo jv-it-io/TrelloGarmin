@@ -18,7 +18,7 @@ class TrelloGarminApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new TrelloGarminView() ] as Array<Views or InputDelegates>;
+        return [ new TrelloLoginView(), new TrelloLoginDelegate()] as Array<Views or InputDelegates>;
     }
 
 }

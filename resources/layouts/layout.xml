@@ -1,3 +1,9 @@
+<layouts>
 <layout id="MainLayout">      
   <bitmap id="id_monkey" x="center" y="center" filename="../drawables/trello_resized.png" />
 </layout>
+<layout id="LoginLayout">
+	  <bitmap id="id_monkey" x="center" y="center" filename="../drawables/trello_resized.png" />
+</layout>
+</layouts>
+

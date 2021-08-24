@@ -1,15 +1,14 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
 
-class TrelloGarminView extends WatchUi.View {
-
-    function initialize() {
+class TrelloLoginView extends WatchUi.View {
+	 function initialize() {
         View.initialize();
     }
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.LoginLayout(dc));
+        setLayout(Rez.Layouts.MainLayout(dc));
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -27,7 +26,6 @@ class TrelloGarminView extends WatchUi.View {
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
-    function onHide() as Void {
-    }
+    function onHide(){}
 
 }
