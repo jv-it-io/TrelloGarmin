@@ -2,8 +2,14 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 
 class TrelloLoginView extends WatchUi.View {
+
+	hidden var _transaction;
+	hidden var _running;
+	
 	 function initialize() {
         View.initialize();
+       _transaction = new TrelloLoginTransaction(new TrelloLoginTransactionDelegate());
+       _running = false;
     }
 
     // Load your resources here
@@ -15,6 +21,11 @@ class TrelloLoginView extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
+     if(_running == false) {
+        System.println("running is false");
+            _transaction.requestAccessToken();
+            _running = true;
+        }
     }
 
     // Update the view
