@@ -10,6 +10,7 @@ class TrelloLoginView extends WatchUi.View {
         View.initialize();
        _transaction = new TrelloLoginTransaction(new TrelloLoginTransactionDelegate());
        _running = false;
+       
     }
 
     // Load your resources here
