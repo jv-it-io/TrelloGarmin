@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\GitHub\TrelloGarmin\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="3" lineNum="7" pc="268435456" symbol="initialize"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="3" lineNum="8" pc="268435460" symbol="initialize"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="4" lineNum="12" pc="268435479" symbol="onStart"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="5" lineNum="16" pc="268435484" symbol="onStop"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="6" lineNum="20" pc="268435489" symbol="getInitialView"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="6" lineNum="21" pc="268435493" symbol="getInitialView"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="7" lineNum="26" pc="268435531" symbol="getApp"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminApp.mc" id="7" lineNum="27" pc="268435543" symbol="getApp"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="9" lineNum="6" pc="268435560" symbol="initialize"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="9" lineNum="7" pc="268435564" symbol="initialize"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="10" lineNum="11" pc="268435583" symbol="onLayout"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="10" lineNum="12" pc="268435587" symbol="onLayout"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="11" lineNum="18" pc="268435625" symbol="onShow"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="12" lineNum="22" pc="268435630" symbol="onUpdate"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="12" lineNum="24" pc="268435634" symbol="onUpdate"/>
+        <entry filename="C:\\GitHub\\TrelloGarmin\\source\\TrelloGarminView.mc" id="13" lineNum="30" pc="268435655" symbol="onHide"/>
+        <entry filename="Rez" id="19" lineNum="18" pc="268435660" symbol="MainLayout"/>
+        <entry filename="Rez" id="19" lineNum="21" pc="268435672" symbol="MainLayout"/>
+        <entry filename="Rez" id="19" lineNum="22" pc="268435791" symbol="MainLayout"/>
+        <entry filename="Rez" id="19" lineNum="24" pc="268435855" symbol="MainLayout"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="9" object="true" symbol="TrelloGarminApp"/>
+        <entry id="15" method="true" symbol="MainLayout"/>
+        <entry id="10" object="true" symbol="TrelloGarminView"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="16" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="13" symbol="id_monkey"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="12" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="14" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="11" module="true" symbol="Layouts"/>
+        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435484" name="state" stackId="1" startPc="268435479"/>
+        <entry arg="true" endPc="268435489" name="state" stackId="1" startPc="268435484"/>
+        <entry arg="true" endPc="268435625" name="dc" stackId="1" startPc="268435583"/>
+        <entry arg="true" endPc="268435655" name="dc" stackId="1" startPc="268435630"/>
+        <entry endPc="268435872" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268435672"/>
+        <entry arg="true" endPc="268435873" name="dc" stackId="1" startPc="268435660"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/TrelloGarminView" offset="158" parentId="globals" symbolId="TrelloGarminView" type="class"/>
+        <dataEntry label="globals/TrelloGarminApp" offset="237" parentId="globals" symbolId="TrelloGarminApp" type="class"/>
+        <dataEntry label="globals/Rez" offset="308" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="387" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="434" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="465" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="496" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="535" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="566" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="initialize" parent="TrelloGarminApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="TrelloGarminApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="TrelloGarminApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getInitialView" parent="TrelloGarminApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="TrelloGarminView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="TrelloGarminView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="TrelloGarminView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="TrelloGarminView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="TrelloGarminView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="MainLayout" parent="Layouts">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
