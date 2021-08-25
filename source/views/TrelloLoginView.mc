@@ -24,7 +24,9 @@ class TrelloLoginView extends WatchUi.View {
     function onShow() as Void {
      if(_running == false) {
         System.println("running is false");
-            _transaction.requestAccessToken();
+        //Todo problem with connexion and IE
+         //   _transaction.requestAccessToken();
+         _transaction.getBoards();
             _running = true;
         }
     }
