@@ -4,6 +4,7 @@ import Toybox.WatchUi;
 
 const RedirectUri = "https://localhost";
 
+
 class TrelloGarminApp extends Application.AppBase {
 
     function initialize() {
