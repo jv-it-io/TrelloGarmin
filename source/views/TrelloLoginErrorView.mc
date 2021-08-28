@@ -1,34 +1,27 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
 
-class TrelloLoginView extends WatchUi.View {
-
-	hidden var _transaction;
-	hidden var _running;
+class TrelloLoginErrorView extends WatchUi.View {
 	
-	 function initialize() {
+	hidden var _errorMsg;
+	
+	 function initialize(errorMessage) {
+	 	_errorMsg = errorMessage;
         View.initialize();
-       _transaction = new TrelloLoginTransaction(new TrelloLoginTransactionDelegate());
-       _running = false;
-       
     }
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.MainLayout(dc));
+        setLayout(Rez.Layouts.ErrorLoginLayout(dc));
+        var view = View.findDrawableById("message");
+        view.setText(_errorMsg);
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-     if(_running == false) {
-        System.println("running is false");
-        //Todo problem with connexion and IE
-            _transaction.requestAccessToken();
-         //_transaction.getBoards();
-            _running = true;
-        }
+    
     }
 
     // Update the view

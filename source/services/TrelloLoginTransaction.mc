@@ -20,15 +20,15 @@ class TrelloLoginTransaction {
 	 // Handle converting the authorization code to the access token
     // @param value Content of JSON response
     function accessCodeResult(value) {
-        if( value.data != null) {
+    	var token = value.data["value"];
+        if( token != null) {
             _complete = true;
-            // Extract the access code from the JSON response
+            // TODO Extract the access code from the JSON response
 			//            getAccessToken(value.data["value"]);
- 			Sys.println("data = " + value);
+ 			
         }
         else {
-            Sys.println("Error in accessCodeResult");
-            Sys.println("data = " + value.data);
+            Sys.println("Error in accessCodeResult");        
             _delegate.handleError(value.responseCode);
         }
     }
@@ -45,7 +45,7 @@ class TrelloLoginTransaction {
 	                "name"=>"TrelloGarminApp",
 	                "scope"=>"read",
 	                "response_type"=>"token",
-	                "key"=>"b6e80727b9377c7eeb8e347d19670a1c"
+	                "key"=>$.ClientId //"b6e80727b9377c7eeb8e347d19670a1c"
 	            },
 	            // Redirect URL
 	            $.RedirectUri,
@@ -66,7 +66,7 @@ class TrelloLoginTransaction {
                 "response_type"=>"code",
                 "scope"=>"public",
                 "redirect_uri"=>$.RedirectUri,
-                "key"=>"b6e80727b9377c7eeb8e347d19670a1c",
+                "key"=>$.ClientId,
 				"token"=>$.token_trello
             },
             // Options to the request

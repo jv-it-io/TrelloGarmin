@@ -5,5 +5,9 @@
 <layout id="LoginLayout">
 	  <bitmap id="id_monkey" x="center" y="center" filename="../drawables/trello_resized.png" />
 </layout>
+<layout id="ErrorLoginLayout">
+	  <bitmap id="id_error" x="center" y="top" filename="../drawables/error.png" />
+	  <label id="message" x="center" y="bottom" justification="Gfx.TEXT_JUSTIFY_CENTER" color="FFFFFF"/>
+</layout>
 </layouts>
 

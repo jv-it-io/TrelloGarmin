@@ -15,7 +15,7 @@ class TrelloLoginTransactionDelegate extends TrelloTransactionDelegate{
     System.println("error code : " + code);
         var msg = ""; //WatchUi.loadResource( Rez.Strings.error );
         msg += code;
-      //  Ui.switchToView(new ErrorView(msg), null, Ui.SLIDE_IMMEDIATE);
+      	Ui.switchToView(new TrelloLoginErrorView(msg), null, Ui.SLIDE_IMMEDIATE);
     }
 
     // Handle a successful response from the server
