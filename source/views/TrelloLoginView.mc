@@ -1,6 +1,8 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
 
+using Toybox.WatchUi as Ui;
+
 class TrelloLoginView extends WatchUi.View {
 
 	hidden var _transaction;
@@ -27,9 +29,10 @@ class TrelloLoginView extends WatchUi.View {
      if(_running == false) {
         System.println("running is false");
         //Todo problem with connexion and IE
-         //   _transaction.requestAccessToken();
-//         _transaction.getBoards();
-_memberService.getMemberInformation($.token_trello);
+         //   _transaction.requestAccessToken();        
+		_memberService.getMemberInformation($.token_trello);
+		
+//		_transaction.getBoards();
             _running = true;
         }
     }

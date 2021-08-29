@@ -9,5 +9,10 @@
 	  <bitmap id="id_error" x="center" y="top" filename="../drawables/error.png" />
 	  <label id="message" x="center" y="bottom" justification="Gfx.TEXT_JUSTIFY_CENTER" color="FFFFFF"/>
 </layout>
+<layout id="BoardLayout">
+	<drawable id="header" />
+	<!--  <label id="memberName" x="left" y="top" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_BLUE" />
+	-->
+</layout>
 </layouts>
 

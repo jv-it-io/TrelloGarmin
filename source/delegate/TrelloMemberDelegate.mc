@@ -18,7 +18,7 @@ class TrelloMemberDelegate{
     }
 
     // Handle a successful response from the server
-    function handleResponse(data, memberName) {
+    function handleResponse(data) {
     System.println("handle response login transaction");
     System.println(data);
 
@@ -30,8 +30,9 @@ class TrelloMemberDelegate{
         // Store away the athlete id
 //        App.getApp().setProperty("athlete_id", data["athlete"]["id"]);
         // Switch to the data view
-        App.getApp().setProperty("member_fullname", memberName);
-        App.getApp().setProperty("board_data", data);
+        App.getApp().setProperty("member_fullname", data.get("fullName"));
+        App.getApp().setProperty("member_id", data.get("id"));
+        Ui.switchToView(new TrelloBoardView(), null, Ui.SLIDE_IMMEDIATE);
         
     //    Ui.switchToView(new trello_garmin_appView(), null, Ui.SLIDE_IMMEDIATE);
     }

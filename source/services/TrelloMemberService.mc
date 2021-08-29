@@ -4,8 +4,10 @@ using Toybox.WatchUi as Ui;
 using Toybox.Application as App;
 
 class TrelloMemberService{
+
+	hidden var _delegate;
  	function initialize(delegate) {
-       
+       _delegate = delegate;
     }
     
      function getMemberInformation(accessCode) {
@@ -41,8 +43,7 @@ class TrelloMemberService{
         if( data != null) {
         	Sys.println("member data name = " + data.get("fullName"));
         	Sys.println("member data id = " + data.get("id"));
-        	
-            //_delegate.handleResponse(data);
+            _delegate.handleResponse(data);
         } else {
             Sys.println("Error in handleMemberInformationResponse");
             Sys.println("data = " + data);
