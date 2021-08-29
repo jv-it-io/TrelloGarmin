@@ -5,10 +5,12 @@ class TrelloLoginView extends WatchUi.View {
 
 	hidden var _transaction;
 	hidden var _running;
+	hidden var _memberService;
 	
 	 function initialize() {
         View.initialize();
        _transaction = new TrelloLoginTransaction(new TrelloLoginTransactionDelegate());
+       _memberService = new TrelloMemberService(new TrelloMemberDelegate());
        _running = false;
        
     }
@@ -25,8 +27,9 @@ class TrelloLoginView extends WatchUi.View {
      if(_running == false) {
         System.println("running is false");
         //Todo problem with connexion and IE
-            _transaction.requestAccessToken();
-         //_transaction.getBoards();
+         //   _transaction.requestAccessToken();
+//         _transaction.getBoards();
+_memberService.getMemberInformation($.token_trello);
             _running = true;
         }
     }

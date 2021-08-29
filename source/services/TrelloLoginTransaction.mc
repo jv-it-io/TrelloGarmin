@@ -59,7 +59,7 @@ class TrelloLoginTransaction {
 	 function getBoards(){
 	 	Comm.makeWebRequest(
             // URL
-               "https://api.trello.com/1/members/me/boards",
+               "https://api.trello.com/1/members/me/boards?",
              {
 				
                 "client_id"=>$.ClientId,
@@ -82,7 +82,8 @@ class TrelloLoginTransaction {
     function handleBoardResponse(responseCode, data) {
         // If we got data back then we were successful. Otherwise
         // pass the error onto the delegate
-        if( data != null) {
+        Sys.println("response code for board request : " + responseCode);
+        if( data != null && responseCode == "200") {
         	Sys.println("board data = " + data);
         	
 //            _delegate.handleResponse(data, _memberName);
