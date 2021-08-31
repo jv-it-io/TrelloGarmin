@@ -19,7 +19,7 @@ class TrelloMemberDelegate{
 
     // Handle a successful response from the server
     function handleResponse(data) {
-    System.println("handle response login transaction");
+    System.println("handle response for member information");
     System.println(data);
 
         // Store the access and refresh tokens in properties
@@ -32,9 +32,11 @@ class TrelloMemberDelegate{
         // Switch to the data view
         App.getApp().setProperty("member_fullname", data.get("fullName"));
         App.getApp().setProperty("member_id", data.get("id"));
-        Ui.switchToView(new TrelloBoardView(), null, Ui.SLIDE_IMMEDIATE);
         
-    //    Ui.switchToView(new trello_garmin_appView(), null, Ui.SLIDE_IMMEDIATE);
+//        var memberService = new TrelloMemberService();
+//        memberService.getBoardList($.token_trello);
+        //TODO switch to TrelloBoardMenuView instead of TrelloBoardListsView
+        Ui.switchToView(new TrelloBoardListsView($.boardIdMock), null, Ui.SLIDE_IMMEDIATE);
     }
 
 }

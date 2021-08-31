@@ -19,7 +19,7 @@ class TrelloLoginDelegate extends Ui.BehaviorDelegate {
 
     // Handle a successful response from the server
     function handleResponse(data, memberName) {
-    System.println("handle response login transaction");
+    System.println("handle response login delegate");
     System.println(data);
 
         // Store the access and refresh tokens in properties

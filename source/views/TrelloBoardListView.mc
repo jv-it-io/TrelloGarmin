@@ -4,18 +4,20 @@ import Toybox.WatchUi;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
-class TrelloBoardView extends WatchUi.View {
+class TrelloBoardListsView extends WatchUi.View {
 
+     hidden var _boardService;
+     hidden var  _menuBoardItem;
      hidden var _memberName;
-     hidden var  _menu;
-     hidden var _boards;
+     hidden var _boardId;
      
 	
-	 function initialize(boards) {
+	 function initialize(boardId) {
         View.initialize();   
         _memberName = Application.getApp().getProperty("member_fullname");
-        _menu = new WatchUi.Menu2({:title=>_memberName});        
-        _boards = boards;
+        _menuBoardItem = new WatchUi.Menu2({:title=>_memberName}); 
+        _boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());   
+        _boardId = boardId;    
        
     }
 
@@ -29,12 +31,14 @@ class TrelloBoardView extends WatchUi.View {
     // loading resources into memory.
     function onShow() as Void {
     
+    	_boardService.getBoardListsByBoardId(_boardId);
+    
 	    addItemToMenu();
 	    
-	    var delegate = new TrelloBoardMenuDelegate(); // a WatchUi.Menu2InputDelegate
+	    var delegate = new TrelloBoarListsdMenuDelegate(); // a WatchUi.Menu2InputDelegate
 
 //	    // Push the Menu2 View set up in the initializer
-        WatchUi.pushView(_menu, delegate, WatchUi.SLIDE_IMMEDIATE);
+        WatchUi.pushView(_menuBoardItem, delegate, WatchUi.SLIDE_IMMEDIATE);
     }
 
     // Update the view
@@ -55,7 +59,7 @@ class TrelloBoardView extends WatchUi.View {
     	if(_boards != null && _boards.size() > 0){
 	    	for(var i=0;i<_boards.size();i++){
 	    		var item = _boards[i];  	
-	    		_menu.addItem(
+	    		_menuBoardItem.addItem(
 	            new WatchUi.MenuItem(
 	
 	                // Set the 'Label' parameter
@@ -77,7 +81,7 @@ class TrelloBoardView extends WatchUi.View {
     		   }	
 			}
     	else{
-    		System.println("No boards loaded");
+    		System.println("No board lists loaded");
     	}
     	
     }
