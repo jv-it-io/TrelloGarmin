@@ -23,5 +23,13 @@ class TrelloBoardServiceDelegate{
     	System.println(data);
 		Ui.switchToView(new TrelloBoardListsView(data), null, Ui.SLIDE_IMMEDIATE);
     }
+    
+    function handleResponseBoardDetails(data){
+    	var boardService = new TrelloBoardService(self);
+    	App.getApp().setProperty("current_board", data);
+    	boardService.getBoardListsByBoardId($.boardIdMock); 
+    	
+    }
+  
 
 }

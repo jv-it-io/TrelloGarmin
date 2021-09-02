@@ -1,7 +1,7 @@
 using Toybox.Communications as Comm;
 using Toybox.System as Sys;
 
-class TrelloBoardService {
+class TrelloBoardInformationService {
 
 
 	hidden var _delegate;
@@ -10,13 +10,12 @@ class TrelloBoardService {
     }
     
     
-     
-     function getBoardListsByBoardId(boardId) {
+       function getBoardDetails(boardId) {
     
         // Make HTTPS GET request to request the access token
         Comm.makeWebRequest(
             // URL
-                      "https://api.trello.com/1/boards/" + $.boardIdMock + "/lists",
+                      "https://api.trello.com/1/boards/" + $.boardIdMock + "",
           
             // Post parameters
             {
@@ -28,19 +27,19 @@ class TrelloBoardService {
                 :method => Comm.HTTP_REQUEST_METHOD_GET
             },
             // Callback to handle response
-            method(:handleBoardListsResponse)
+            method(:handleBoardDetailsResponse)
         );
     }
     //TODO change to get list of board
      // Callback to handle receiving the access code
-    function handleBoardListsResponse(responseCode, data) {
+    function handleBoardDetailsResponse(responseCode, data) {
         // If we got data back then we were successful. Otherwise
         // pass the error onto the delegate
-        Sys.println("board lists data = " + data);
+        Sys.println("board details data = " + data);
         if( data != null) {
-            _delegate.handleResponse(data);           
+            _delegate.handleResponseBoardDetails(data);           
         } else {
-            Sys.println("Error in handleBoardListsResponse");
+            Sys.println("Error in handleBoardDetailsResponse");
             Sys.println("data = " + data);
             Sys.println("error code = " + responseCode);
             _delegate.handleError(responseCode);

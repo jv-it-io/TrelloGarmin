@@ -3,6 +3,7 @@ import Toybox.WatchUi;
 
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+using Toybox.Application as App;
 
 class TrelloBoardListsView extends WatchUi.View {
 
@@ -11,13 +12,15 @@ class TrelloBoardListsView extends WatchUi.View {
      hidden var _memberName;
      hidden var _boardList;
      hidden var data;
+     hidden var _currentBoardName;
      
 	
 	 function initialize(data) {
 	 Sys.println("init");
         View.initialize();   
         _memberName = Application.getApp().getProperty("member_fullname");
-        _menuBoardItem = new WatchUi.Menu2({:title=>_memberName}); 
+        _currentBoardName = App.getApp().getProperty("current_board").get("name");
+        _menuBoardItem = new WatchUi.Menu2({:title=>_currentBoardName}); 
         _boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());   
         _boardList = data;    
         //data = _boardService.getBoardListsByBoardId(_boardId);
