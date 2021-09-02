@@ -40,6 +40,7 @@ class TrelloMemberService{
         // If we got data back then we were successful. Otherwise
         // pass the error onto the delegate
         Sys.println("data = " + data);
+        //TODO check response code
         if( data != null) {
         	Sys.println("member data name = " + data.get("fullName"));
         	Sys.println("member data id = " + data.get("id"));

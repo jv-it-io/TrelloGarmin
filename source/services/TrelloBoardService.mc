@@ -36,12 +36,12 @@ class TrelloBoardService {
         // pass the error onto the delegate
         Sys.println("board lists data = " + data);
         if( data != null) {
-        	
-           
+            _delegate.handleResponse(data);           
         } else {
             Sys.println("Error in handleMemberInformationResponse");
             Sys.println("data = " + data);
             Sys.println("error code = " + responseCode);
+            _delegate.handleError(responseCode);
             
         }
     }

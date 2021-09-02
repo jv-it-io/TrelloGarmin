@@ -11,8 +11,8 @@ class TrelloBoardServiceDelegate{
 
     // Handle a error from the server
     function handleError(code) {
-    System.println("error code : " + code);
-        var msg = ""; //WatchUi.loadResource( Rez.Strings.error );
+    System.println("error code Board Service : " + code);
+        var msg = ""; 
         msg += code;
       	Ui.switchToView(new TrelloLoginErrorView(msg), null, Ui.SLIDE_IMMEDIATE);
     }
@@ -21,7 +21,7 @@ class TrelloBoardServiceDelegate{
     function handleResponse(data) {
     	System.println("handle response for board information");
     	System.println(data);
-
+		Ui.switchToView(new TrelloBoardListsView(data), null, Ui.SLIDE_IMMEDIATE);
     }
 
 }

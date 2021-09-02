@@ -9,20 +9,24 @@ class TrelloBoardListsView extends WatchUi.View {
      hidden var _boardService;
      hidden var  _menuBoardItem;
      hidden var _memberName;
-     hidden var _boardId;
+     hidden var _boardList;
+     hidden var data;
      
 	
-	 function initialize(boardId) {
+	 function initialize(data) {
+	 Sys.println("init");
         View.initialize();   
         _memberName = Application.getApp().getProperty("member_fullname");
         _menuBoardItem = new WatchUi.Menu2({:title=>_memberName}); 
         _boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());   
-        _boardId = boardId;    
+        _boardList = data;    
+        //data = _boardService.getBoardListsByBoardId(_boardId);
        
     }
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
+    Sys.println("onLayout");
         setLayout(Rez.Layouts.BoardLayout(dc));
     }
 
@@ -30,9 +34,9 @@ class TrelloBoardListsView extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-    
-    	_boardService.getBoardListsByBoardId(_boardId);
-    
+    	Sys.println("onShow");
+    	
+    	Sys.println("Data from board service ? " + _boardList);
 	    addItemToMenu();
 	    
 	    var delegate = new TrelloBoarListsdMenuDelegate(); // a WatchUi.Menu2InputDelegate
@@ -43,6 +47,7 @@ class TrelloBoardListsView extends WatchUi.View {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
+    Sys.println("onUpdate");
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -54,11 +59,11 @@ class TrelloBoardListsView extends WatchUi.View {
     
      function addItemToMenu(){
      	
-     	var _boards = [];
+     	
     	
-    	if(_boards != null && _boards.size() > 0){
-	    	for(var i=0;i<_boards.size();i++){
-	    		var item = _boards[i];  	
+    	if(_boardList != null && _boardList.size() > 0){
+	    	for(var i=0;i<_boardList.size();i++){
+	    		var item = _boardList[i];  	
 	    		_menuBoardItem.addItem(
 	            new WatchUi.MenuItem(
 	

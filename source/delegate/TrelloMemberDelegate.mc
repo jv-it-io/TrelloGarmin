@@ -11,7 +11,7 @@ class TrelloMemberDelegate{
 
     // Handle a error from the server
     function handleError(code) {
-    System.println("error code : " + code);
+    System.println("error code member service : " + code);
         var msg = ""; //WatchUi.loadResource( Rez.Strings.error );
         msg += code;
       	Ui.switchToView(new TrelloLoginErrorView(msg), null, Ui.SLIDE_IMMEDIATE);
@@ -36,7 +36,9 @@ class TrelloMemberDelegate{
 //        var memberService = new TrelloMemberService();
 //        memberService.getBoardList($.token_trello);
         //TODO switch to TrelloBoardMenuView instead of TrelloBoardListsView
-        Ui.switchToView(new TrelloBoardListsView($.boardIdMock), null, Ui.SLIDE_IMMEDIATE);
+      var boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());
+      boardService.getBoardListsByBoardId($.boardIdMock);
+//        Ui.switchToView(new TrelloBoardListsView($.boardIdMock), null, Ui.SLIDE_IMMEDIATE);
     }
 
 }
