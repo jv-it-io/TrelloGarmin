@@ -83,7 +83,7 @@ class TrelloLoginTransaction {
         // If we got data back then we were successful. Otherwise
         // pass the error onto the delegate
         Sys.println("response code for board request : " + responseCode);
-        if( data != null && responseCode == "200") {
+        if( data != null && responseCode == 200) {
         	Sys.println("board data = " + data);
         	
 //            _delegate.handleResponse(data, _memberName);

@@ -49,9 +49,7 @@ class TrelloBoardView extends WatchUi.View {
     function onHide(){}
     
      function addItemToMenu(){
-     	
-     	var _boards = [];
-    	
+     	    	
     	if(_boards != null && _boards.size() > 0){
 	    	for(var i=0;i<_boards.size();i++){
 	    		var item = _boards[i];  	

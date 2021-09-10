@@ -30,6 +30,14 @@ class TrelloBoardServiceDelegate{
     	boardService.getBoardListsByBoardId($.boardIdMock); 
     	
     }
+    
+    function handleBoardsResponse(data){
+    
+    	Sys.println("Data Response Boards : " + data);
+		Ui.switchToView(new TrelloBoardView(data), null, Ui.SLIDE_IMMEDIATE);
+    	
+    	
+    }
   
 
 }

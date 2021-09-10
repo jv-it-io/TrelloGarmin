@@ -36,9 +36,9 @@ class TrelloMemberDelegate{
 //        var memberService = new TrelloMemberService();
 //        memberService.getBoardList($.token_trello);
         //TODO switch to TrelloBoardMenuView instead of TrelloBoardListsView
-      var boardService = new TrelloBoardInformationService(new TrelloBoardServiceDelegate());
-//      boardService.getBoardListsByBoardId($.boardIdMock);
-      boardService.getBoardDetails($.boardIdMock);
+      var boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());
+		boardService.getBoards();
+    //  boardService.getBoardDetails($.boardIdMock);
 //        Ui.switchToView(new TrelloBoardListsView($.boardIdMock), null, Ui.SLIDE_IMMEDIATE);
     }
 
