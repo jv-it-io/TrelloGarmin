@@ -38,6 +38,11 @@ class TrelloBoardServiceDelegate{
     	
     	
     }
+    
+    function handleCardsFromAListOfABoard(data){
+    	App.getApp().setProperty("current_card",data);
+    	Ui.switchToView(new TrelloCardsView(data), null, Ui.SLIDE_IMMEDIATE);
+    }
   
 
 }

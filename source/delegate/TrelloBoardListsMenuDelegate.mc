@@ -7,7 +7,8 @@ class TrelloBoarListsdMenuDelegate extends WatchUi.Menu2InputDelegate{
     }
 
     function onSelect(item) {
-        System.println(item.getId());
+         var boardService = new TrelloBoardService(new TrelloBoardServiceDelegate());
+        boardService.getCardsFromAListOfABoard(item.getId());
     }
 
 
