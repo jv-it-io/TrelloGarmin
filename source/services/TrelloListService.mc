@@ -1,7 +1,7 @@
 using Toybox.Communications as Comm;
 using Toybox.System as Sys;
 
-class TrelloBoardService {
+class TrelloListService {
 
 
 	hidden var _delegate;
@@ -11,12 +11,12 @@ class TrelloBoardService {
     
     
      
-     function getBoardListsByBoardId(boardId) {
+     function getListDetailsById(listId) {
     
         // Make HTTPS GET request to request the access token
         Comm.makeWebRequest(
             // URL
-                      "https://api.trello.com/1/boards/" + boardId + "/lists",
+                      "https://api.trello.com/1/lists/" + listId,
           
             // Post parameters
             {
@@ -28,17 +28,17 @@ class TrelloBoardService {
                 :method => Comm.HTTP_REQUEST_METHOD_GET
             },
             // Callback to handle response
-            method(:handleBoardListsResponse)
+            method(:handleListDetailsByIdResponse)
         );
     }
     //TODO change to get list of board
      // Callback to handle receiving the access code
-    function handleBoardListsResponse(responseCode, data) {
+    function handleListDetailsByIdResponse(responseCode, data) {
         // If we got data back then we were successful. Otherwise
         // pass the error onto the delegate
         Sys.println("board lists data = " + data);
         if( data != null) {
-            _delegate.handleResponse(data);           
+            _delegate.handleListDetailsResponse(data);           
         } else {
             Sys.println("Error in handleBoardListsResponse");
             Sys.println("data = " + data);
@@ -48,46 +48,8 @@ class TrelloBoardService {
         }
     }
     
-     function getBoards() {
     
-        // Make HTTPS GET request to request the access token
-        Comm.makeWebRequest(
-            // URL
-                      "api.trello.com/1/members/me/boards",
-          
-            // Post parameters
-            {
-				"key"=>$.ClientId,
-				"token"=>$.token_trello,
-				"fields"=>"name"
-            },
-            // Options to the request
-            {
-                :method => Comm.HTTP_REQUEST_METHOD_GET
-            },
-            // Callback to handle response
-            method(:handleBoardsResponse)
-        );
-    }
-    
-     // Callback to handle get board of the connected member
-     //fields : id, name
-    function handleBoardsResponse(responseCode, data) {
-        // If we got data back then we were successful. Otherwise
-        // pass the error onto the delegate
-        Sys.println("board lists data = " + data);
-        if( data != null) {
-            _delegate.handleBoardsResponse(data);           
-        } else {
-            Sys.println("Error in handleBoardListsResponse");
-            Sys.println("data = " + data);
-            Sys.println("error code = " + responseCode);
-            _delegate.handleError(responseCode);
-            
-        }
-    }
-    
-    function getCardsFromAListOfABoard(listId){
+     function getCardsFromAListOfABoard(listId){
     	 // Make HTTPS GET request to request the access token
         Comm.makeWebRequest(
             // URL
@@ -124,5 +86,7 @@ class TrelloBoardService {
             
         }
     }
+    
+  
     
 }

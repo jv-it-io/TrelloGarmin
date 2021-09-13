@@ -15,7 +15,7 @@ class TrelloBoardInformationService {
         // Make HTTPS GET request to request the access token
         Comm.makeWebRequest(
             // URL
-                      "https://api.trello.com/1/boards/" + $.boardIdMock + "",
+                      "https://api.trello.com/1/boards/" + boardId + "",
           
             // Post parameters
             {

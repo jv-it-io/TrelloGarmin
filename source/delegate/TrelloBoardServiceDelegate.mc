@@ -27,8 +27,7 @@ class TrelloBoardServiceDelegate{
     function handleResponseBoardDetails(data){
     	var boardService = new TrelloBoardService(self);
     	App.getApp().setProperty("current_board", data);
-    	boardService.getBoardListsByBoardId($.boardIdMock); 
-    	
+    	boardService.getBoardListsByBoardId(data.get("id"));   	
     }
     
     function handleBoardsResponse(data){
