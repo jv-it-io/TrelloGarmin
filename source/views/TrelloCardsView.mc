@@ -14,11 +14,12 @@ class TrelloCardsView extends WatchUi.View {
 	
 	 function initialize(data) {
 	 Sys.println("init Cards View");
-	 Sys.println(data);
         View.initialize();   
         _currentListName = App.getApp().getProperty("current_list").get("name");
         _menuCardItem = new WatchUi.Menu2({:title=>_currentListName}); 
-        _cardList = data;    
+        _cardList = data;  
+        
+        
         //data = _boardService.getBoardListsByBoardId(_boardId);
        
     }
@@ -33,12 +34,19 @@ class TrelloCardsView extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-         addItemToMenu();
+    	if(_cardList.size() > 0){
+    		 addItemToMenu();
 	    
-	    var delegate = new TrelloCardsMenuDelegate(); // 
+	    	var delegate = new TrelloCardsMenuDelegate(); // 
 
-//	    // Push the Menu2 View set up in the initializer
-        WatchUi.pushView(_menuCardItem, delegate, WatchUi.SLIDE_IMMEDIATE);
+		    // Push the Menu2 View set up in the initializer
+	        WatchUi.pushView(_menuCardItem, delegate, WatchUi.SLIDE_IMMEDIATE);
+    	}else{
+    		System.println("No card lists loaded");
+        	//Swith to no element view
+        	Ui.switchToView(new TrelloNoElementView("No Cards in " + _currentListName), null, Ui.SLIDE_IMMEDIATE);
+    	}
+        
     }
 
     // Update the view
@@ -81,7 +89,7 @@ class TrelloCardsView extends WatchUi.View {
     		   }	
 			}
     	else{
-    		System.println("No card lists loaded");
+    		
     	}
     	
     }

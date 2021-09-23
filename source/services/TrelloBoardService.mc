@@ -12,7 +12,6 @@ class TrelloBoardService {
     
      
      function getBoardListsByBoardId(boardId) {
-    
         // Make HTTPS GET request to request the access token
         Comm.makeWebRequest(
             // URL
