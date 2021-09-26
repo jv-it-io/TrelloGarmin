@@ -4,3 +4,7 @@ bin/TrelloGarmin.prg
 bin/TrelloGarmin.prg.debug.xml
 
 source/Keys.mc
+
+bin/Trello_Garmin.prg
+
+bin/Trello_Garmin.prg.debug.xml
