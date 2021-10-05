@@ -40,18 +40,21 @@ class TrelloCardInfoView extends WatchUi.View {
     function onUpdate(dc as Dc) as Void {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        Sys.println("Labels : " + _cardLabel[0]);
-        dc.setColor(_arrayColor[_cardLabel[0].get("color")],Gfx.COLOR_TRANSPARENT);
-		var cx = dc.getWidth() / 2;
-		var cy = dc.getHeight() / 2;
-		
-		//dc.setPenWidth(4);
-		
-		dc.drawEllipse(cx, cy, cx - 3, cy - 3);
-		dc.drawEllipse(cx, cy, cx - 2, cy - 2);
-		dc.drawEllipse(cx, cy, cx - 1, cy - 1);
-		dc.drawEllipse(cx, cy, cx , cy);
-		dc.drawEllipse(cx, cy, cx + 1, cy + 1);
+        for(var i=0;i<_cardLabel.size();i++){
+        	Sys.println("Labels : " + _cardLabel[i]);
+	        dc.setColor(_arrayColor[_cardLabel[i].get("color")],Gfx.COLOR_TRANSPARENT);
+			var cx = dc.getWidth() / 2;
+			var cy = dc.getHeight() / 2;
+			
+			//dc.setPenWidth(4);
+			
+			dc.drawEllipse(cx, cy, cx - 3, cy - 3);
+			dc.drawEllipse(cx, cy, cx - 2, cy - 2);
+			dc.drawEllipse(cx, cy, cx - 1, cy - 1);
+			dc.drawEllipse(cx, cy, cx , cy);
+			dc.drawEllipse(cx, cy, cx + 1, cy + 1);
+        }
+       
 		
 		//dc.setPenWidth(1);
     }

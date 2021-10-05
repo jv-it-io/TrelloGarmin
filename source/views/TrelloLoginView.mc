@@ -30,6 +30,8 @@ class TrelloLoginView extends WatchUi.View {
         System.println("running is false");
         //Todo problem with connexion and IE
          //   _transaction.requestAccessToken();        
+		
+		//Test directly with an existing token
 		_memberService.getMemberInformation($.token_trello);
 		
 //		_transaction.getBoards();
